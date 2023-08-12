@@ -1,4 +1,4 @@
-import { Get, Req, Controller } from '@nestjs/common';
+import { Get, Post, Req, Controller } from '@nestjs/common';
 
 import { MainService } from './main.service';
 
@@ -15,5 +15,13 @@ export class MainController {
         console.log('res:', res);
         return {message: res};
     }
+
+    @Post()
+    async handleGetMain() {
+        const res = await this.mainService.getAll();
+        console.log('Post:', res);
+        return {message: res};
+    }
+
 
 }

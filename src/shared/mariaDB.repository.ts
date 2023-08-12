@@ -22,7 +22,6 @@ export class MariaDBRepository {
             password: config.MARIADB.PASSWORD,
             database: config.MARIADB.DATABASE 
         });
-        console.log('config: ', config);
     }
 
     async executeQuery(sql: string, values?: any) {
