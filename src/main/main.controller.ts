@@ -13,14 +13,14 @@ export class MainController {
     async handleGetMain() {
         const res = await this.mainService.getAll();
         console.log('res:', res);
-        return {message: res};
+        return {data: {'id': res.id, 'title': res.title, 'limit': res.limit}};
     }
 
     @Post()
     async handlePostMain() {
         const res = await this.mainService.getAll();
         console.log('Post:', res);
-        return {data: {'id': res.id, 'title': res.title, 'limit': res.limit}};
+        return {'data': {'id': res.id, 'title': res.title, 'limit': res.limit}};
     }
 
 
