@@ -17,6 +17,7 @@ export class MariaDBRepository {
         this.pool = createPool({
             connectionLimit: 10,
             host: config.MARIADB.HOST,
+            port: config.MARIADB.PORT, 
             user: config.MARIADB.USER,
             password: config.MARIADB.PASSWORD,
             database: config.MARIADB.DATABASE 
