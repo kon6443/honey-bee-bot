@@ -8,7 +8,7 @@ dotenv.config({path: envFilePath});
 
 export const config = {
 
-    MYSQL: {
+    MARIADB: {
         HOST: process.env.MARIADB_HOST,
         USER: process.env.MARIADB_USER,
         PASSWORD: process.env.MARIADB_PASSWORD,

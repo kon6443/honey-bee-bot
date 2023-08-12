@@ -10,8 +10,10 @@ export class MainController {
     ) {}
 
     @Get()
-    handleGetMain() {
-        return {message: 'Hello world!'};
+    async handleGetMain() {
+        const res = await this.mainService.getAll();
+        console.log('res:', res);
+        return {message: res};
     }
 
 }
