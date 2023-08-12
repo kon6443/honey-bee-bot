@@ -1,6 +1,7 @@
 import { Get, Post, Req, Controller } from '@nestjs/common';
 
 import { MainService } from './main.service';
+import { PartyDto } from './dto/party-dto';
 
 @Controller('main')
 export class MainController { 
@@ -11,16 +12,18 @@ export class MainController {
 
     @Get()
     async handleGetMain() {
-        const res = await this.mainService.getAll();
-        console.log('res:', res);
-        return {data: {'id': res.id, 'title': res.title, 'limit': res.limit}};
+        const PartyDto: PartyDto[] = await this.mainService.getAll();
+        console.log('PartyDto:', PartyDto);
+        const list = this.mainService.organizePartyDto(PartyDto);
+        return {'data': list};
     }
 
     @Post()
     async handlePostMain() {
-        const res = await this.mainService.getAll();
-        console.log('Post:', res);
-        return {'data': {'id': res.id, 'title': res.title, 'limit': res.limit}};
+        const PartyDto: PartyDto[] = await this.mainService.getAll();
+        console.log('PartyDto:', PartyDto);
+        const list = this.mainService.organizePartyDto(PartyDto);
+        return {'data': list};
     }
 
 
