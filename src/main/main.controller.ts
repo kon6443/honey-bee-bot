@@ -20,7 +20,7 @@ export class MainController {
     async handlePostMain() {
         const res = await this.mainService.getAll();
         console.log('Post:', res);
-        return {message: res};
+        return {data: {id: res.id, title: res.title, limit: res.limit}};
     }
 
 
