@@ -17,7 +17,7 @@ export class MainController {
     }
 
     @Post()
-    async handleGetMain() {
+    async handlePostMain() {
         const res = await this.mainService.getAll();
         console.log('Post:', res);
         return {message: res};
