@@ -10,7 +10,7 @@ export const config = {
 
     MARIADB: {
         HOST: process.env.MARIADB_HOST,
-        PORT: process.env.MARIADB_PORT, 
+        PORT: Number(process.env.MARIADB_PORT), 
         USER: process.env.MARIADB_USER,
         PASSWORD: process.env.MARIADB_PASSWORD,
         DATABASE: process.env.MARIADB_DATABASE,
