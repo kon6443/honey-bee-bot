@@ -15,7 +15,18 @@ export class MainController {
         const PartyDto: PartyDto[] = await this.mainService.getAll();
         console.log('PartyDto:', PartyDto);
         const list = this.mainService.organizePartyDto(PartyDto);
-        return {'data': list};
+
+        return {
+            "version": "2.0",
+            "template": {
+            "outputs": [{
+                    "simpleText": {
+                        "text": list
+                    }
+                }]
+            }
+        }
+
     }
 
     @Post()
@@ -23,8 +34,18 @@ export class MainController {
         const PartyDto: PartyDto[] = await this.mainService.getAll();
         console.log('PartyDto:', PartyDto);
         const list = this.mainService.organizePartyDto(PartyDto);
-        return {'data': list};
-    }
 
+        return {
+            "version": "2.0",
+            "template": {
+            "outputs": [{
+                    "simpleText": {
+                        "text": list
+                    }
+                }]
+            }
+        }
+
+    }
 
 }
